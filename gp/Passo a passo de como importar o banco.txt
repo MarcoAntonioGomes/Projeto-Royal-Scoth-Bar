@@ -1,0 +1,16 @@
+Abrir qualquer navegador-->
+Digitar o seguinte link "http://localhost/phpmyadmin/" -->
+
+Se no menu a esquerda já existir uma tabela com o nome "mydb", faça-->
+	Click na tabela "mydb" -->
+	Nas abas onde tem as opções "Estrutura, SQL,Pesquisar..." vá em "Operações"-->
+	Agora click em "Apagar Base de Dados" que está em vermelho na página e de ok-->
+
+Se na tabela a esquerda não existir uma tabela com o nome "mydb" ou se você já deletou ela no passo acima, faça-->
+	No menu a esquerda vá em "New"-->
+	No campo Criar base de dados, crie um banco com o nome "mybd"-->
+	Depois vá no menu esquerdo e click no banco "mydb"-->
+	Nas abas onde tem as opções "Estrutura, SQL, Pesquisar..." vá em "Importar"-->
+	Click em "Escolher Arquivo"-->
+	Selecione o arquivo "mydb.sql" do seu computador e click no "Executar" no fim da página-->
+	-- OBS: Esse processo pode demorar alguns segundos -- 

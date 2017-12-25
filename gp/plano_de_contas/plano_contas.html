@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Soft Admin</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" href="../css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="../css/uniform.css" />
+<link rel="stylesheet" href="../css/select2.css" />
+<link rel="stylesheet" href="../css/matrix-style.css" />
+<link rel="stylesheet" href="../css/matrix-media.css" />
+<link rel="stylesheet" href="../css/colorpicker.css" />
+<link rel="stylesheet" href="../css/datepicker.css" />
+<link rel="stylesheet" href="../css/bootstrap-wysihtml5.css" />
+<link href="../font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1><a href="#">Soft Engenharia</a></h1>
+</div>
+<!--close-Header-part--> 
+
+
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+  <ul class="nav">
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Bem Vindo Admin</span><b class="caret"></b></a>
+    
+    </li>    
+    <li class=""><a title="" href="../index.php"><i class="icon icon-share-alt"></i> <span class="text">Sair</span></a></li>
+  </ul>
+</div>
+<!--close-top-serch--> 
+
+<!--sidebar-menu-->
+
+<div id="sidebar"><a href="../admin.html" class="visible-phone"><i class="icon icon-home"></i> Início</a>
+  <ul>
+    <li ><a href="../admin.html"><i class="icon icon-home"></i> <span>Início</span></a> </li>
+	<li class="submenu"> <a href="#"><i class="icon-group"></i> <span>Cadastros</span> <span class="label label-important"></span></a>
+      <ul>
+        <li><a href="../cadastros/cliente.html">Cliente</a></li>
+		<li><a href="../cadastros/funcionario.html">Funcionário</a></li>
+        <li><a href="../cadastros/fornecedor.html">Fornecedor</a></li>
+        <li><a href="../cadastros/produto.html">Produtos</a></li>
+      </ul>
+    </li>  
+	<li class="submenu"> <a href="#"><i class="icon-search"></i> <span>Consultas</span> <span class="label label-important"></span></a>
+      <ul>
+            <li><a href="../consultas/cliente.html">Cliente</a></li>
+			<li><a href="../consultas/funcionario.html">Funcionário</a></li>
+        <li><a href="../consultas/fornecedor.html">Fornecedor</a></li>
+        <li><a href="../consultas/produto.html">Produtos</a></li>
+      </ul>
+    </li> 
+    <li> <a href="../estoque/estoque.html"><i class="icon icon-signal"></i> <span>Estoque</span></a> </li>
+	<li class="active"> <a href="#"><i class="icon-list-alt"></i> <span>Plano de Contas</span></a> </li>
+    </li>
+	
+	
+	<li> <a href="../pre_vendas/pre_venda.html"><i class="icon-reorder"></i> <span>Pré Venda</span></a>
+    </li>
+	
+	<li> <a href="../vendas/venda.html"><i class="icon-money"></i> <span>Venda</span></a>
+    </li>
+	<li class="submenu"> <a href="#"><i class="icon-list-ul"></i> <span>Relatório</span> <span class="label label-important"></span></a>
+      <ul>
+	    <li><a href="../relatorios/produto.html">Produto</a></li>
+		<li><a href="../relatorios/compra.html">Compra</a></li>
+        <li><a href="../relatorios/venda.html">Venda</a></li>
+        <li><a href="../relatorios/fornecedor.html">Fornecedor</a></li>
+		<li><a href="../relatorios/cliente.html">Cliente</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="../admin.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Plano de Contas</a> </div>
+    <h1>Plano de Contas</h1>
+  
+  </div>
+  <div class="container-fluid">
+    <hr>
+	<a href="nova_receita.php"><button class="btn btn-success btn-large icon-plus"> Nova Receita</button></a>
+	<a href="nova_despesa.php"><button class="btn btn-danger btn-large icon-minus"> Nova Despesa</button></a>
+    <div class="row-fluid">
+      <div class="span12">
+		<div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>Menu</h5>
+        </div>
+        <div class="widget-content nopadding">
+          <form class="form-horizontal">
+		    <div class="control-group">
+              <label class="control-label">Situação</label>
+              <div class="controls">
+                <select id="situacao" name="situacao">
+                  <option selected value="0">Selecione uma situação</option>
+				  <option value="T">Todos</option>
+                  <option value="P">Previsto</option>
+                  <option value="A">Atrasado</option>
+                  <option value="R">Realizado</option>
+                </select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Data Inicial</label>
+              <div class="controls">
+                <div  data-date="" class="input-append date datepicker">
+                  <input type="text" value="" data-date-format="dd-mm-yyyy" class="datepicker span11" id="mask-data" name="datainicial" placeholder="__-__-___">
+                </div>
+              </div>
+			  <label class="control-label">Data Final</label>
+			  <div class="controls">
+                <div  data-date="" class="input-append date datepicker">
+                  <input type="text" value="" data-date-format="dd-mm-yyyy" class="datepicker span11" id="mask-data2" name = "datafinal" placeholder="__-__-___">
+                </div>
+              </div>
+            </div>
+            <div class="form-actions">
+              <input type="submit" name="consultar" id="consultar" value="Pesquisar" class="btn btn-success">
+			  
+            </div>
+          </form>
+        </div>
+      </div>   
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
+            <h5>Plano de Contas</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table id="clientes" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Título</th>
+                  <th>Data</th>
+                  <th>Entrada</th>
+                  <th>Situação</th>
+				  <th>Valor Total</th>
+				  <th>Fornecedor</th>
+				  <th>Pagamento</th>
+				  <th>Observação</th>
+				  <th>Deletar</th>
+				</tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Footer-part-->
+<div class="row-fluid">
+  <div id="footer" class="span12"> 2017 &copy; Soft Engenharia. <a href="http://www.softengenharia.com.br">Soft Engenharia</a> </div>
+</div>
+<!--end-Footer-part-->
+<script src="../js/jquery.min.js"></script> 
+<script src="../js/jquery.ui.custom.js"></script> 
+<script src="../js/bootstrap.min.js"></script> 
+<script src="../js/bootstrap-colorpicker.js"></script> 
+<script src="../js/bootstrap-datepicker.js"></script> 
+<script src="../js/masked.js"></script> 
+<script src="../js/jquery.uniform.js"></script> 
+<script src="../js/select2.min.js"></script> 
+<script src="../js/jquery.dataTables.min.js"></script> 
+<script src="../js/matrix.js"></script> 
+<script src="../js/matrix.tables.js"></script>
+<script src="../js/matrix.form_common.js"></script>
+<script src="../js/wysihtml5-0.3.0.js"></script> 
+<script src="../js/jquery.peity.min.js"></script> 
+<script src="../js/bootstrap-wysihtml5.js"></script>  
+<script src="../js/consulta.planocontas.js"></script>
+
+</body>
+</html>

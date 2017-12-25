@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Soft Admin</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" href="../css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="../css/colorpicker.css" />
+<link rel="stylesheet" href="../css/datepicker.css" />
+<link rel="stylesheet" href="../css/uniform.css" />
+<link rel="stylesheet" href="../css/select2.css" />
+<link rel="stylesheet" href="../css/matrix-style.css" />
+<link rel="stylesheet" href="../css/matrix-media.css" />
+<link rel="stylesheet" href="../css/bootstrap-wysihtml5.css" />
+<link href="../font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link href="../css/googlefonts.css' rel='stylesheet' type='text/css">
+</head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1><a href="#">Soft Engenharia</a></h1>
+</div>
+<!--close-Header-part--> 
+
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+	<ul class="nav">
+		<li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Bem Vindo</span></a></li>    
+		<li class=""><a title="" href="../../index.php"><i class="icon icon-share-alt"></i> <span class="text">Sair</span></a></li>
+	</ul>
+</div>
+
+<!--sidebar-menu-->
+<div id="sidebar"><a href="../funcionario.html" class="visible-phone"><i class="icon icon-home"></i> Início</a>
+	<ul>
+		<li><a href="../funcionario.html"><i class="icon icon-home"></i> <span>Início</span></a> </li>
+		<li class="active submenu"> <a href="#"><i class="icon-group"></i> <span>Cadastros</span> <span class="label label-important"></span></a>
+			<ul>
+				<li><a href="cliente.html">Cliente</a></li>
+				<li><a href="fornecedor.html">Fornecedor</a></li>
+				<li><a href="produto.html">Produto</a></li>
+			</ul>
+		</li>  
+		<li class="submenu"> <a href="#"><i class="icon-search"></i> <span>Consultas</span> <span class="label label-important"></span></a>
+			<ul>
+				<li><a href="../consultas/cliente.html">Cliente</a></li>	
+				<li><a href="../consultas/fornecedor.html">Fornecedor</a></li>
+				<li><a href="../consultas/produto.html">Produto</a></li>
+			</ul>
+		</li> 
+		<li> <a href="../pre_vendas/pre_venda.html"><i class="icon-reorder"></i> <span>Pré Venda</span></a></li>
+		<li class=""> <a href="../vendas/venda.html"><i class="icon-money"></i> <span>Venda</span><span class="label label-important"></span></a></li>
+	</ul>
+</div>
+
+<!--close-left-menu-stats-sidebar-->
+
+<div id="content">
+<div id="content-header">
+  <div id="breadcrumb"> <a href="../funcionario.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Cadastros</a> <a href="#" class="current">Produto</a> </div>
+  <h1>Cadastro de Produtos</h1>
+</div>
+<div class="container-fluid">
+  <hr>
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>Informações</h5>
+        </div>
+        <div class="widget-content nopadding">
+          <form id="form" class="form-horizontal">
+            <div class="control-group">
+			<div class="control-group">
+              <label class="control-label">Código de Barras: </label>
+              <div class="controls">
+                <input type="text" class="span11" name ="codigobarras" placeholder="Código de Barras" />
+              </div>
+            </div>
+              <label class="control-label">*Nome do Produto: </label>
+              <div class="controls">
+                <input type="text" class="span11" name="nome" placeholder="Nome do Produto" id="nome"/>
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">*Preço Custo: </label>
+              <div class="controls">
+                <input type="text" class="span11" name="precocusto" placeholder="Preço Custo" id="precocusto"/>
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">*Margem de Lucro (%): </label>
+              <div class="controls">
+                <input type="text" class="span11" name="margem" onblur="porcentagem();" placeholder="___%" id="mask-lucro"/>
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">*Preco Final: </label>
+              <div class="controls">
+                <input type="text" class="span11" name="precofinal"  placeholder="Preco Final" id="precofinal" />
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">*Quantidade: </label>
+              <div class="controls">
+                <input type="text" class="span11" name="quantidade" placeholder="Quantidade" id="quantidade" />
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">*Fornecedor</label>
+              <div class="controls">
+                <select name="fornecedor" id="fornecedor" >
+                  <option selected value="0">Selecione um fornecedor</option>
+                  
+                </select>
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">*Forma de Pagamento</label>
+              <div class="controls">
+                <select name="pagamento" id="pagamento" >
+                  <option selected value="0">Selecione uma forma de pagamento</option>
+                </select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Observação</label>
+              <div class="controls">
+                <textarea class="span11" name="observacao" style= "resize: vertical;"></textarea>
+              </div>
+			  <div><span class="help-block blue span8">*Campos Obrigatórios</span> </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" id="cadastrar" class="btn btn-success">Cadastrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+    
+    </div>
+  
+    </div>
+  </div>
+
+</div></div>
+<!--Footer-part-->
+<div class="row-fluid">
+  <div id="footer" class="span12"> 2017 &copy; Soft Engenharia. <a href="http://www.softengenharia.com.br">Soft Engenharia</a> </div>
+</div>
+<!--end-Footer-part--> 
+<script src="../js/jquery.min.js"></script> 
+<script src="../js/jquery.ui.custom.js"></script> 
+<script src="../js/bootstrap.min.js"></script> 
+<script src="../js/bootstrap-colorpicker.js"></script> 
+<script src="../js/bootstrap-datepicker.js"></script> 
+<script src="../js/jquery.toggle.buttons.js"></script> 
+<script src="../js/masked.js"></script> 
+<script src="../js/jquery.uniform.js"></script> 
+<script src="../js/select2.min.js"></script> 
+<script src="../js/matrix.js"></script> 
+<script src="../js/matrix.form_common.js"></script> 
+<script src="../js/wysihtml5-0.3.0.js"></script> 
+<script src="../js/jquery.peity.min.js"></script> 
+<script src="../js/bootstrap-wysihtml5.js"></script>
+<script src="../js/cadastro.produto.js"></script> 
+<script>
+	$('.textarea_editor').wysihtml5();
+</script>
+
+<script>
+function porcentagem(){
+	var preco_custo = document.getElementById('precocusto');
+	var porcentagem_lucro = document.getElementById('mask-lucro');
+	var precofinal = document.getElementById('precofinal');
+	var preco = Number(preco_custo.value);
+	var porcentagem = Number(porcentagem_lucro.value);
+	var aux = (preco + ((preco)*((porcentagem)/100)));
+	precofinal.value = aux;
+}	
+</script>
+</body>
+</html>

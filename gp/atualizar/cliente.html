@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Soft Admin</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" href="../css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="../css/colorpicker.css" />
+<link rel="stylesheet" href="../css/datepicker.css" />
+<link rel="stylesheet" href="../css/uniform.css" />
+<link rel="stylesheet" href="../css/select2.css" />
+<link rel="stylesheet" href="../css/matrix-style.css" />
+<link rel="stylesheet" href="../css/matrix-media.css" />
+<link rel="stylesheet" href="../css/bootstrap-wysihtml5.css" />
+<link href="../font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link href='../css/googlefonts.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1><a href="#">Matrix Admin</a></h1>
+</div>
+<!--close-Header-part--> 
+
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+  <ul class="nav">
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Bem Vindo Admin</span><b class="caret"></b></a>
+    
+    </li>    
+    <li class=""><a title="" href="../index.php"><i class="icon icon-share-alt"></i> <span class="text">Sair</span></a></li>
+  </ul>
+</div>
+
+<!--start-top-serch-->
+<!--close-top-serch--> 
+
+<!--sidebar-menu-->
+
+<div id="sidebar"><a href="../admin.html" class="visible-phone"><i class="icon icon-home"></i> Início</a>
+  <ul>
+    <li><a href="../admin.html"><i class="icon icon-home"></i> <span>Início</span></a> </li>
+	<li class="active submenu"> <a href="#"><i class="icon-group"></i> <span>Cadastros</span> <span class="label label-important"></span></a>
+      <ul>
+        <li><a href="../cadastros/cliente.hmtl">Cliente</a></li>
+		<li><a href="../cadastros/funcionario.html">Funcionário</a></li>
+        <li><a href="../cadastros/fornecedor.html">Fornecedor</a></li>
+        <li><a href="../cadastros/produto.html">Produtos</a></li>
+      </ul>
+    </li>  
+	<li class="submenu"> <a href="#"><i class="icon-search"></i> <span>Consultas</span> <span class="label label-important"></span></a>
+      <ul>
+        <li><a href="../consultas/cliente.html">Cliente</a></li>
+		<li><a href="../consultas/funcionario.html">Funcionário</a></li>		
+        <li><a href="../consultas/fornecedor.html">Fornecedor</a></li>
+        <li><a href="../consultas/produto.html">Produtos</a></li>
+      </ul>
+    </li> 
+    <li> <a href="../estoque/estoque.html"><i class="icon icon-signal"></i> <span>Estoque</span></a> </li>
+	<li> <a href="../plano_de_contas/plano_contas.html"><i class="icon-list-alt"></i> <span>Plano de Contas</span></a> </li>
+    </li>
+	
+	
+	<li> <a href="../pre_vendas/pre_venda.html"><i class="icon-reorder"></i> <span>Pré Venda</span></a>
+    </li>
+	
+	<li class=""> <a href="../vendas/venda.html"><i class="icon-money"></i> <span>Venda</span> <span class="label label-important"></span></a>
+    </li>
+	<li class="submenu"> <a href="#"><i class="icon-list-ul"></i> <span>Relatório</span> <span class="label label-important"></span></a>
+      <ul>
+	    <li><a href="../relatorios/produto.html">Produto</a></li>
+		<li><a href="../relatorios/compra.html">Compra</a></li>
+        <li><a href="../relatorios/venda.html">Venda</a></li>
+        <li><a href="../relatorios/fornecedor.html">Fornecedor</a></li>
+		<li><a href="../relatorios/cliente.html">Cliente</a></li>
+      </ul>
+    </li>
+	
+  </ul>
+</div>
+
+<!--close-left-menu-stats-sidebar-->
+
+<div id="content">
+<div id="content-header">
+  <div id="breadcrumb"> <a href="../admin.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="../consultas/cliente.html" class="tip-bottom">Consultas</a> <a href="#" class="current"> Editar Cliente</a> </div>
+  <h1>Editar Cliente</h1>
+</div>
+<div class="container-fluid">
+  <hr>
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>Informações Pessoais</h5>
+        </div>
+        <div class="widget-content nopadding">
+          <form  id="form" class="form-horizontal">
+			<div class="control-group">
+              <label class="control-label">*Nome Completo: </label>
+              <div class="controls">
+                <input type="text" class="span11" name="nome" placeholder="Nome Completo" id="nome"/>
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">*CPF: </label>
+              <div class="controls">
+                <input type="text" class="span11" name="cpf"  placeholder="___.___.___-__" maxlength="14" id="mask-cpf" />
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">RG: </label>
+              <div class="controls">
+                <input type="text" class="span11" name="rg"  placeholder="RG" id="rg" />
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">Endereço: </label>
+              <div class="controls">
+                <input type="text" class="span11" name="endereco"  placeholder="Endereço" id="endereco"/>
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">Complemento: </label>
+              <div class="controls">
+                <input type="text" class="span11" name="complemento"  placeholder="Complemento" id="complemento"/>
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">Cidade: </label>
+              <div class="controls">
+                <input type="text" class="span11" name="cidade"  placeholder="Cidade" value="Bambui" id="cidade"/>
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">Estado:</label>
+              <div class="controls">
+				<select name="estado" id="estado">
+				<option value="">Selecione o Estado (UF)</option>
+				<option value="Acre">Acre</option>
+				<option value="Alagoas">Alagoas</option>
+				<option value="Amapá">Amapá</option>
+				<option value="Amazonas">Amazonas</option>
+				<option value="Bahia">Bahia</option>
+				<option value="Ceará">Ceará</option>
+				<option value="Distrito Federal">Distrito Federal</option>
+				<option value="Espírito Santo">Espírito Santo</option>
+				<option value="Goiás">Goiás</option>
+				<option value="Maranhão">Maranhão</option>
+				<option value="Mato Grosso">Mato Grosso</option>
+				<option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+				<option selected="Minas Gerais" value="Minas Gerais">Minas Gerais</option>
+				<option value="Pará">Pará</option>
+				<option value="Paraíba">Paraíba</option>
+				<option value="Paraná">Paraná</option>
+				<option value="Pernambuco">Pernambuco</option>
+				<option value="Piauí">Piauí</option>
+				<option value="Rio de Janeiro">Rio de Janeiro</option>
+				<option value="Rio Grande do Sul">Rio Grande do Sul</option>
+				<option value="Rio Grande do Norte">Rio Grande do Norte</option>
+				<option value="Rondônia">Rondônia</option>
+				<option value="Roraima">Roraima</option>
+				<option value="Santa Catarina">Santa Catarina</option>
+				<option value="São Paulo">São Paulo</option>
+				<option value="Sergipe">Sergipe</option>
+				<option value="Tocantins">Tocantins</option>
+                </select>
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">CEP: </label>
+              <div class="controls">
+                <input type="text" class="span11" name="cep"  placeholder="_____-___" value="38900-000" id="mask-cep"/>
+              </div>
+            </div>
+			 <div class="control-group">
+              <label for="normal" class="control-label">Telefone.</label>
+              <div class="controls">
+                <input type="text" id="mask-celular" name="telefone"  class="span8 mask text" placeholder="(__) _ ____-____">
+                <span class="help-block blue span8">(DDD) 9 9999-9999</span> </div>
+				<div><span class="help-block blue span8">*Campos Obrigatórios</span> </div>
+            </div>
+            <div class="form-actions">
+              <input id="cadastrar" type="submit" class="btn btn-success" value="Atualizar">
+            </div>
+          </form>
+        </div>
+      </div>
+      
+    
+    </div>
+  
+    </div>
+  </div>
+
+</div></div>
+<!--Footer-part-->
+<div class="row-fluid">
+  <div id="footer" class="span12"> 2017 &copy; Soft Engenharia. <a href="http://www.softengenharia.com.br">Soft Engenharia</a> </div>
+</div>
+<!--end-Footer-part--> 
+<script src="../js/jquery.min.js"></script> 
+<script src="../js/jquery.ui.custom.js"></script> 
+<script src="../js/bootstrap.min.js"></script> 
+<script src="../js/bootstrap-colorpicker.js"></script> 
+<script src="../js/bootstrap-datepicker.js"></script> 
+<script src="../js/jquery.toggle.buttons.js"></script> 
+<script src="../js/masked.js"></script> 
+<script src="../js/jquery.uniform.js"></script> 
+<script src="../js/select2.min.js"></script> 
+<script src="../js/matrix.js"></script> 
+<script src="../js/matrix.form_common.js"></script> 
+<script src="../js/wysihtml5-0.3.0.js"></script> 
+<script src="../js/jquery.peity.min.js"></script> 
+<script src="../js/bootstrap-wysihtml5.js"></script> 
+<script src="../js/maskteste.js"></script>
+<script src="../js/atualizar.cliente.js"></script> 
+
+</body>
+</html>
